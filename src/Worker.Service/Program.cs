@@ -13,6 +13,11 @@ namespace Worker.Service
 		{
 			CreateHostBuilder(args).Build().Run();
 		}
+		private void GetName()
+		{
+			string text="welcome to test";
+			return text;
+		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)
