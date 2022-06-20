@@ -15,7 +15,12 @@ namespace Worker.Service
 		}
 		private void GetName()
 		{
-			string text="welcome to test";
+			string text="welcome to test the merger text should be fix the issue";
+			return text;
+		}
+		private void GetName2()
+		{
+			string text="welcome to test the merger text should be fix the issue";
 			return text;
 		}
 
