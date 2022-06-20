@@ -15,10 +15,9 @@ namespace Worker.Service
 		}
 		private void GetName()
 		{
-			string text="welcome to test";
+			string text="welcome to test the merger text should be fix the issue";
 			return text;
 		}
-
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)
 				.ConfigureServices((hostContext, services) =>
