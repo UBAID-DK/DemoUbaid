@@ -1,19 +1,30 @@
+name: Mergebot
+
 on:
   workflow_run:
     workflows:
-    - pull request
+      - Pull request
     types:
       - completed
   workflow_dispatch:
-
+  
 jobs:
   auto-merge:
     name: Auto merge
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - uses: e-conomic/mergebot@v1
-        with:
-          github_token: ${{ secrets.MERGEBOT_TOKEN }}
-          reviewers: ${{ secrets.PLATFORM_REVIEWERS }}
-          semver_match: minor
+     - name: my-app-install token
+       id: my-app
+       uses: getsentry/action-github-app-token@v1
+       with:
+         app_id: ${{ secrets.APP_ID }}
+         private_key: ${{ secrets.PRIVATE_KEY }}
+     - name: Checkout private repo
+       uses: e-conomic/mergebot@v1
+       with:
+        repository: UBAID-DK/-e-conomic-mergebot-playground      
+        github_token: ${{ steps.my-app.outputs.token }}
+        reviewers: ${{ secrets.PLATFORM_REVIEWERS }}
+        semver_match: minor
+        MERGE_METHOD: rebase
