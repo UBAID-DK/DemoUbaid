@@ -18,6 +18,11 @@ namespace Worker.Service
 			string text="welcome to test the merger text should be fix the issue";
 			return text;
 		}
+		private void GetName2()
+		{
+			string text="welcome to test the merger 2 text should be fix the issue 2";
+			return text;
+		}
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)
 				.ConfigureServices((hostContext, services) =>
