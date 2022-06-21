@@ -16,7 +16,7 @@ jobs:
     steps:    
      - name: print secret value
        run: | 
-          echo "App Id: ${{ secrets.APP_ID}} "
+          echo "App Id: ${{ secrets.APPID}} "
           echo "App Private KeY: ${{ secrets.PRIVATE_KEY}} "
           echo "App Installation Id: ${{ secrets.INSTALLATION_ID}} "
      - name: Checkout private repo
