@@ -13,7 +13,7 @@ namespace Worker.Service
 		{
 			CreateHostBuilder(args).Build().Run();
 		}
-		// this is demo project for current flow chart
+		
 		private void GetName()
 		{
 			string text="welcome to test the merger text should be fix the issue";
