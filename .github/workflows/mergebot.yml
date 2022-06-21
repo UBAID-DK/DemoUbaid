@@ -13,18 +13,10 @@ jobs:
     name: Auto merge
     runs-on: ubuntu-latest
     timeout-minutes: 1
-    steps:
-     - name: my-app-install token
-       id: my-app
-       uses: getsentry/action-github-app-token@v1
-       with:
-         app_id: ${{ secrets.APP_ID }}
-         private_key: ${{ secrets.PRIVATE_KEY }}
+    steps:    
      - name: Checkout private repo
        uses: e-conomic/mergebot@v1
        with:
-        repository: UBAID-DK/DemoUbaid      
-        github_token: ${{ steps.my-app.outputs.token }}
-        reviewers: ${{ secrets.PLATFORM_REVIEWERS }}
-        semver_match: minor
-        MERGE_METHOD: rebase
+          github_app_id: ${{ secrets.APP_ID}}
+          github_app_private_key: ${{ secrets.PRIVATE_KEY }}    
+          github_app_installation_id: ${{ secrets.INSTALLATION_ID }}
