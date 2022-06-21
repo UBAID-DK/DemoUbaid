@@ -22,7 +22,7 @@ jobs:
      - name: Checkout private repo
        uses: e-conomic/mergebot@v1
        with:          
-          github_appid: ${{ secrets.APPID}}          
+          github_app_id: ${{ secrets.APPID}}          
           github_app_private_key: ${{ secrets.PRIVATE_KEY }}    
           github_app_installation_id: ${{ secrets.INSTALLATION_ID }}
           
