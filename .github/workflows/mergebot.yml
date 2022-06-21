@@ -16,13 +16,13 @@ jobs:
     steps:    
      - name: print secret value
        run: | 
-          echo "App Id: ${{ secrets.APPID}} "
+          echo "App Id: ${{ secrets.APP_ID}} "
           echo "App Private KeY: ${{ secrets.PRIVATE_KEY}} "
           echo "App Installation Id: ${{ secrets.INSTALLATION_ID}} "
      - name: Checkout private repo
        uses: e-conomic/mergebot@v1
        with:          
-          github_app_id: ${{ secrets.APPID }}          
+          github_app_id: ${{ secrets.APP_ID }}          
           github_app_private_key: ${{ secrets.PRIVATE_KEY }}    
           github_app_installation_id: ${{ secrets.INSTALLATION_ID }}
           
