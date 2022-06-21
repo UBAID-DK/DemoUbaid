@@ -1,6 +1,9 @@
 name: Mergebot
 
 on:
+  push:
+    branches:
+      - main
   workflow_run:
     workflows:
       - Pull request
