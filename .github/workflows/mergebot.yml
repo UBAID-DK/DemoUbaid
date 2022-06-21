@@ -12,8 +12,13 @@ jobs:
   auto-merge:
     name: Auto merge
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: 1    
     steps:    
+     - name: print secret value
+       run: | 
+          echo "App Id: ${{ secrets.APP_ID}} "
+          echo "App Private KeY: ${{ secrets.PRIVATE_KEY}} "
+          echo "App Installation Id: ${{ secrets.INSTALLATION_ID}} "
      - name: Checkout private repo
        uses: e-conomic/mergebot@v1
        with:          
@@ -21,9 +26,4 @@ jobs:
           github_app_private_key: ${{ secrets.PRIVATE_KEY }}    
           github_app_installation_id: ${{ secrets.INSTALLATION_ID }}
           
-     - name: print secret value
-       with:
-          run: | 
-          echo "App Id: ${{ secrets.APP_ID}} "
-          echo "App Private KeY: ${{ secrets.PRIVATE_KEY}} "
-          echo "App Installation Id: ${{ secrets.INSTALLATION_ID}} "
+
